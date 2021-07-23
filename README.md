@@ -145,7 +145,6 @@ Note:
 4. CASE 2: CALCULATING ANGLE TO INCREMENT REP COUNTER or INFORM PERSON TO ADD MORE ANGLE TO EXERCISE: Take LONG into consideration.
 
 | Exercise  | Angles Used | Short | Long |
-
 | ------------- | ------------- |------------- |------------- |
 | Push-Up  | Shoulder Abduction<br/>Shoulder Flexion<br/>Hips<br/>Knees<br/>Elbow  | <br/> Shoulder Abduction = 10 <br/> Shoulder Flexion = 50 <br/> Hip >= 165<br/>Knees >= 175 <br/> ELbow = 175           |<br/> Shoulder Abduction = 45 <br/> Shoulder Flexion = 10 <br/> Hip >= 65<br/>Knees >= 175 <br/> ELbow = 80           |
 | Content Cell  | Content Cell  |             |             |
