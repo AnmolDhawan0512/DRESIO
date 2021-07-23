@@ -21,19 +21,19 @@ CASE 1: When taking x and y into consideration
     }
 
 CASE 2: When taking y and z into consideration
-`static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
-double result =
-        Math.toDegrees(
-            atan2(lastPoint.getPosition().z - midPoint.getPosition().z,
-                      lastPoint.getPosition().y - midPoint.getPosition().y)
-                - atan2(firstPoint.getPosition().z - midPoint.getPosition().z,
-                      firstPoint.getPosition().y - midPoint.getPosition().y));
-  result = Math.abs(result); // Angle should never be negative
-  if (result > 180) {
+` static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+    double result =
+            Math.toDegrees(
+                    atan2(lastPoint.getPosition().z - midPoint.getPosition().z,
+                            lastPoint.getPosition().y - midPoint.getPosition().y)
+                            - atan2(firstPoint.getPosition().z - midPoint.getPosition().z,
+                            firstPoint.getPosition().y - midPoint.getPosition().y));
+    result = Math.abs(result); // Angle should never be negative
+    if (result > 180) {
       result = (360.0 - result); // Always get the acute representation of the angle
-  }
-  return result;
-}`
+    }
+    return result;
+  }`
 
 CASE 3: When taking x and z into consideration
 `
