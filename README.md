@@ -144,10 +144,45 @@ Note:
 3. CASE 1: DETECTION OF EXERCISE THAT THE PERSON IS GOING TO PERFORM: Take SHORT into consideration. 
 4. CASE 2: CALCULATING ANGLE TO INCREMENT REP COUNTER or INFORM PERSON TO ADD MORE ANGLE TO EXERCISE: Take LONG into consideration.
 
-| Exercise  | Angles Used | Short | Long |
+| EXERCISES  | ANGLES USED | SHORT | LONG |
 | ------------- | ------------- |------------- |------------- |
 | Push-Up  | Shoulder Abduction<br/>Shoulder Flexion<br/>Hips<br/>Knees<br/>Elbow  | <br/> Shoulder Abduction = 10 <br/> Shoulder Flexion = 50 <br/> Hip >= 165<br/>Knees >= 175 <br/> ELbow = 175           |<br/> Shoulder Abduction = 45 <br/> Shoulder Flexion = 10 <br/> Hip >= 65<br/>Knees >= 175 <br/> ELbow = 80           |
 | Squats  | Hip<br/>Knee<br/>Ankle  | Hip = 165 <br/> Knee = 175 <br/> Ankle = 85 | Hip = 70 <br/> Knee = 70 <br/> Ankle = 80 |
 | Bicep Curl  | Shoulder Flexion <br/> Elbow  | Shoulder Flexion <= 30 <br/> Elbow = 30 | Shoulder Flexion = 0 <br/> Elbow = 160 |
 | Leg Raise  | Knees <br/> Hip  | Knees >= 160 <br/> Hips = 100 | Knees >= 160 <br/> Hips = 160 |
 | Lateral Raise  | Elbow <br/> Shoulder Abduction  | Elbow >= 170 <br/> Shoulder Abduction = 80 | Elbow >= 170 <br/> Shoulder Abduction = 5 |
+
+With the information above we have enough data about:
+1. How to calculate angle.
+2. What are various angles needed for an exercises.
+3. What are the placemarks needed for those angles to be calculated.
+4. What are the angles needed to detect a posture for exercise.
+5. What are the threshold to increase the repetition counter or motivate user to do more.
+
+We can simply create methods for various exercises. 
+
+# In Java - PseudoCode
+
+## For calculating the threshold to increase the repetition counter or motivate user to do more.
+```java
+public void performSquatRight(){
+ if(rightShoulderAbductionAngle==45 && rightShoulderFlexionAngle==10 && rightHipAngle>=165 && rightKneeAngle>=175 && rightElbowAngle==80){
+     System.out.println("Good Job"); 
+          //Various marks can be added for excellent or good job or try more etc.
+          //Use Switch Case for the same.
+     repcounter++;
+     }
+ else
+     System.out.println("Put your " + placemark + "to an angle of 165");
+}
+```
+          `//Note: This was for detection from Right Joints, Same for left is needed.`
+
+## For detecting the exercise that the user is going to perform.
+```java
+public void detectSquatRight(){
+ if(rightShoulderAbductionAngle==10 && rightShoulderFlexionAngle==50 && rightHipAngle>=165 && rightKneeAngle>=175 && rightElbowAngle==175){
+     System out.println("Okay! Squats!")
+     }
+```
+          `//Note: This was for detection from Right Joints, Same for left is needed.`
