@@ -132,4 +132,15 @@ double rightAnkleAngle = getAngle(
 ```            
                 `//Similar for leftKneeAngle`
 
-Now we know how to calculate the angle 
+Now we know how to:
+1. Calculate the angle (the axes into consideration over various exercises and/or movements)
+2. Get the angles for the joints that are needed for us to design 3-5 exercises for Energize App.
+
+We can therefore move to various exercises and their requirements.
+
+Exercise 1:
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
