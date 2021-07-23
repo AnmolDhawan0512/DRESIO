@@ -21,8 +21,8 @@ CASE 1: When taking x and y into consideration
     }
 
 CASE 2: When taking y and z into consideration
-
-`   static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+```java
+   static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
     double result =
             Math.toDegrees(
                     atan2(lastPoint.getPosition().z - midPoint.getPosition().z,
@@ -34,8 +34,8 @@ CASE 2: When taking y and z into consideration
       result = (360.0 - result); // Always get the acute representation of the angle
     }
     return result;
-  }`
-
+  }
+```
 CASE 3: When taking x and z into consideration
 `
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
