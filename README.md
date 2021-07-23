@@ -140,7 +140,7 @@ We can therefore move to various exercises and their requirements.
 
 Exercise 1:
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| First Header  | Second Header | Third Header |
+| ------------- | ------------- |------------- |
+| Content Cell  | Content Cell  |       |      |
+| Content Cell  | Content Cell  |       |      |
