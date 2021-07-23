@@ -80,7 +80,7 @@ Then we get the angles for all the 33 landmarks as in a human body which goes li
 This is the angle for 6 joints namely: Elbow, Shoulder Flexion, Shoulder Abduction, Hip, Knees, Ankle
 The computing goes as follows:
 
-#### Angle 1: Hips
+#### ANGLE 1: Hips
 ```java
 double rightHipAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER),
@@ -89,7 +89,7 @@ double rightHipAngle = getAngle(
  ```               
                 `//Similar for leftHipAngle`
                 
-#### Angle 2: Elbows
+#### ANGLE 2: Elbows
 ```java
 double rightElbowAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_WRIST),   
@@ -98,7 +98,7 @@ double rightElbowAngle = getAngle(
 ```  
              `   //Similar for leftElbowAngle`
                 
-#### Angle 3: Shoulder Flexions
+#### ANGLE 3: Shoulder Flexions
 ```java
 double rightShoulderFlexionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -108,7 +108,7 @@ double rightShoulderFlexionAngle = getAngle(
              `   //Similar for leftShoulderFlexionAngle
                 //Note, when using Shoulder Flexion it means that the X-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.`
                 
-#### Angle 4: Shoulder Abductions
+#### ANGLE 4: Shoulder Abductions
 ```java
 double rightShoulderAbductionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -119,7 +119,7 @@ double rightShoulderAbductionAngle = getAngle(
                 //Note, when using Shoulder Abduction it means that the Z-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.
                 //Refer to the Angle Cases as mentioned above
 
-#### Angle 5: Knees
+#### ANGLE 5: Knees
 ```java
 double rightKneeAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ANKLE),   
@@ -128,7 +128,7 @@ double rightKneeAngle = getAngle(
 ```            
                 //Similar for leftKneeAngle
                 
-#### Angle 6: Ankles
+#### ANGLE 6: Ankles
 ```java
 double rightAnkleAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_FOOTINDEX),   
