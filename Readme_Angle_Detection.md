@@ -3,8 +3,8 @@ Calculating Joint Angles
 For calculation of angle of a joint, we need 3 points, firstpoint, midpoint and lastpoint. Also, three axeses are needed, namely x,y,z for certain cases like shoulder abduction 
 and shoulder flexion where the points are same but the angle changes based on axes. 
 
-The angle is calculated by using:
-CASE 1: When taking x and y into consideration
+The **angle** is calculated by using:
+### CASE 1: When taking X and Y into consideration
 ```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
      double result =
@@ -20,7 +20,7 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
       return result;
     }
 ```
-CASE 2: When Y and Z are taken into consideration
+### CASE 2: When Y and Z are taken into consideration
 ```java
    static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
     double result =
@@ -36,7 +36,7 @@ CASE 2: When Y and Z are taken into consideration
     return result;
   }
 ```
-CASE 3: When taking x and z into consideration
+### CASE 3: When taking X and Z into consideration
 ```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
   double result =
@@ -53,7 +53,7 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
 }
 ``` 
 
-CASE 4: When taking x,y,z into consideration
+### CASE 4: When taking X, Y, Z into consideration
 ```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
   double result =
@@ -75,7 +75,7 @@ Then we get the angles for all the 33 landmarks as in a human body which goes li
 Note: This is the angle for 6 joints namely: Elbow, Shoulder Flexion, Shoulder Abduction, Hip, Knees, Ankle
 The computing goes as follows:
 
-ANGLE 1: Hips
+### ANGLE 1: Hips
 ```java
 double rightHipAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER),
@@ -84,7 +84,7 @@ double rightHipAngle = getAngle(
  ```               
                 `//Similar for leftHipAngle`
                 
-ANGLE 2: Elbow
+### ANGLE 2: Elbow
 ```java
 double rightElbowAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_WRIST),   
@@ -93,7 +93,7 @@ double rightElbowAngle = getAngle(
 ```  
              `   //Similar for leftElbowAngle`
                 
-Angle 3: Shoulder Flexions
+### Angle 3: Shoulder Flexions
 ```java
 double rightShoulderFlexionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -103,7 +103,7 @@ double rightShoulderFlexionAngle = getAngle(
              `   //Similar for leftShoulderFlexionAngle
                 //Note, when using Shoulder Flexion it means that the X-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.`
                 
-Angle 4: Shoulder Abduction
+### Angle 4: Shoulder Abduction
 ```java
 double rightShoulderAbductionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -114,7 +114,7 @@ double rightShoulderAbductionAngle = getAngle(
                 //Note, when using Shoulder Abduction it means that the Z-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.
                 //Refer to the Angle Cases as mentioned above
 
-Angle 5: Knees
+### Angle 5: Knees
 ```java
 double rightKneeAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ANKLE),   
@@ -123,7 +123,7 @@ double rightKneeAngle = getAngle(
 ```            
                 //Similar for leftKneeAngle
                 
-Angle 6: Ankle
+### Angle 6: Ankle
 ```java
 double rightAnkleAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_FOOTINDEX),   
@@ -141,8 +141,8 @@ We can therefore move to various exercises and their requirements.
 Note:
 1. Wherever "=" has been mentioned, it means that if the person passes that angle during exercise, we can increment the "rep counter".
 2. For all the exercises there has to be 2 methods, One for LEFT and one for RIGHT.
-3. CASE 1: DETECTION OF EXERCISE THAT THE PERSON IS GOING TO PERFORM: Take SHORT into consideration. 
-4. CASE 2: CALCULATING ANGLE TO INCREMENT REP COUNTER or INFORM PERSON TO ADD MORE ANGLE TO EXERCISE: Take LONG into consideration.
+3. **Case 1: Detection of Exercise that the person is going to perform: Take SHORT into consideration. **
+4. **Case 2: Calculating angle to increment rep counter or inform person to add more angle to Exercise: Take LONG into consideration.**
 
 | EXERCISES  | ANGLES USED | SHORT | LONG |
 | ------------- | ------------- |------------- |------------- |
@@ -153,17 +153,17 @@ Note:
 | Lateral Raise  | Elbow <br/> Shoulder Abduction  | Elbow >= 170 <br/> Shoulder Abduction = 80 | Elbow >= 170 <br/> Shoulder Abduction = 5 |
 
 With the information above we have enough data about:
-1. How to calculate angle.
-2. What are various angles needed for an exercises.
-3. What are the placemarks needed for those angles to be calculated.
-4. What are the angles needed to detect a posture for exercise.
-5. What are the threshold to increase the repetition counter or motivate user to do more.
+1. How to ***calculate angle.***
+2. What are ***various angles*** needed for an exercises.
+3. What are the ***placemarks needed*** for those angles to be calculated.
+4. What are the angles needed to ***detect a posture*** for exercise.
+5. What are the ***threshold to increase the repetition counter or motivate user to do more.***
 
 We can simply create methods for various exercises. 
 
 # In Java - PseudoCode
 
-## For calculating the threshold to increase the repetition counter or motivate user to do more.
+### For calculating the threshold to increase the repetition counter or motivate user to do more.
 ```java
 public void performSquatRight(){
  if(rightShoulderAbductionAngle==45 && rightShoulderFlexionAngle==10 && rightHipAngle>=165 && rightKneeAngle>=175 && rightElbowAngle==80){
@@ -179,7 +179,7 @@ public void performSquatRight(){
           `//Note: This was for performance from Right Joints, Same for left is needed.
            //When performSquatRight()&&performSquatLeft==True --> repcounter++`
 
-## For detecting the exercise that the user is going to perform.
+### For detecting the exercise that the user is going to perform.
 ```java
 public void detectSquatRight(){
  if(rightShoulderAbductionAngle==10 && rightShoulderFlexionAngle==50 && rightHipAngle>=165 && rightKneeAngle>=175 && rightElbowAngle==175){
@@ -188,4 +188,3 @@ public void detectSquatRight(){
 ```
           `//Note: This was for detection from Right Joints, Same for left is needed.
            //When detectSquatRight()&&detectSquatLeft==True --> Detection Confirmed`
-          
