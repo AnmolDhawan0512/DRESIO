@@ -22,7 +22,7 @@ CASE 1: When taking x and y into consideration
 
 CASE 2: When taking y and z into consideration
 `static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
-  double result =
+double result =
         Math.toDegrees(
             atan2(lastPoint.getPosition().z - midPoint.getPosition().z,
                       lastPoint.getPosition().y - midPoint.getPosition().y)
