@@ -37,7 +37,7 @@ CASE 2: When Y and Z are taken into consideration
   }
 ```
 CASE 3: When taking x and z into consideration
-`
+```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
   double result =
         Math.toDegrees(
@@ -51,9 +51,11 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
   }
   return result;
 }
-`
+``` 
+
 CASE 4: When taking x,y,z into consideration
-`static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+```java
+static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
   double result =
         Math.toDegrees(
             atan2(lastPoint.getPosition().z - midPoint.getPosition().z,
@@ -68,57 +70,66 @@ CASE 4: When taking x,y,z into consideration
   }
   return result;
 }
-`
+```
 Then we get the angles for all the 33 landmarks as in a human body which goes like this.
 Note: This is the angle for 6 joints namely: Elbow, Shoulder Flexion, Shoulder Abduction, Hip, Knees, Ankle
 The computing goes as follows:
 
 ANGLE 1: Hips
-`double rightHipAngle = getAngle(
+```java
+double rightHipAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER),
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_HIP),
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_KNEE)); 
- `               
+ ```               
                 `//Similar for leftHipAngle`
                 
 ANGLE 2: Elbow
-`double rightElbowAngle = getAngle(
+```java
+double rightElbowAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_WRIST),   
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER));
-            `
+```  
              `   //Similar for leftElbowAngle`
                 
 Angle 3: Shoulder Flexions
-`double rightShoulderFlexionAngle = getAngle(
+```java
+double rightShoulderFlexionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER),
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_HIP));
-            `
+```       
              `   //Similar for leftShoulderFlexionAngle
                 //Note, when using Shoulder Flexion it means that the X-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.`
                 
 Angle 4: Shoulder Abduction
-`double rightShoulderAbductionAngle = getAngle(
+```java
+double rightShoulderAbductionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER),
-                pose.getPoseLandmark(PoseLandmark.Type.RIGHT_HIP));`
-            
+                pose.getPoseLandmark(PoseLandmark.Type.RIGHT_HIP));
+```            
                 //Similar for leftShoulderAbductionAngle
                 //Note, when using Shoulder Abduction it means that the Z-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.
+                //Refer to the Angle Cases as mentioned above
 
 Angle 5: Knees
-`double rightKneeAngle = getAngle(
+```java
+double rightKneeAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ANKLE),   
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_KNEE),
-                pose.getPoseLandmark(PoseLandmark.Type.RIGHT_HIP));`
-            
+                pose.getPoseLandmark(PoseLandmark.Type.RIGHT_HIP));
+```            
                 //Similar for leftKneeAngle
                 
 Angle 6: Ankle
-`double rightAnkleAngle = getAngle(
+```java
+double rightAnkleAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_FOOTINDEX),   
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ANKLE),
-                pose.getPoseLandmark(PoseLandmark.Type.RIGHT_KNEE));`
-            
-                //Similar for leftKneeAngle
+                pose.getPoseLandmark(PoseLandmark.Type.RIGHT_KNEE));
+```            
+                `//Similar for leftKneeAngle`
+
+Now we know how to calculate the angle 
