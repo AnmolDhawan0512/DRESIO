@@ -146,5 +146,5 @@ Note:
 
 | Exercise  | Angles Used | Angles threshold or passing points required to make REP++ |
 | ------------- | ------------- |------------- |
-| Push-Up  | Shoulder Abduction \ Shoulder Flexion  |             |
+| Push-Up  | Shoulder Abduction \\ Shoulder Flexion  |             |
 | Content Cell  | Content Cell  |             |
