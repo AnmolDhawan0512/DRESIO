@@ -146,7 +146,7 @@ Note:
 
 | EXERCISES  | ANGLES USED | SHORT | LONG |
 | ------------- | ------------- |------------- |------------- |
-| Push-Up  | Shoulder Abduction<br/>Shoulder Flexion<br/>Hips<br/>Knees<br/>Elbow  | <br/> Shoulder Abduction = 10 <br/> Shoulder Flexion = 50 <br/> Hip >= 165<br/>Knees >= 175 <br/> ELbow = 175           |<br/> Shoulder Abduction = 45 <br/> Shoulder Flexion = 10 <br/> Hip >= 65<br/>Knees >= 175 <br/> ELbow = 80           |
+| Push-Up  | Shoulder Abduction<br/>Shoulder Flexion<br/>Hips<br/>Knees<br/>Elbow  | Shoulder Abduction = 10 <br/> Shoulder Flexion = 50 <br/> Hip >= 165<br/>Knees >= 175 <br/> Elbow = 175           |Shoulder Abduction = 45 <br/> Shoulder Flexion = 10 <br/> Hip >= 65<br/>Knees >= 175 <br/> Elbow = 80           |
 | Squats  | Hip<br/>Knee<br/>Ankle  | Hip = 165 <br/> Knee = 175 <br/> Ankle = 85 | Hip = 70 <br/> Knee = 70 <br/> Ankle = 80 |
 | Bicep Curl  | Shoulder Flexion <br/> Elbow  | Shoulder Flexion <= 30 <br/> Elbow = 30 | Shoulder Flexion = 0 <br/> Elbow = 160 |
 | Leg Raise  | Knees <br/> Hip  | Knees >= 160 <br/> Hips = 100 | Knees >= 160 <br/> Hips = 160 |
