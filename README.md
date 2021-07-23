@@ -146,5 +146,5 @@ Note:
 
 | Exercise  | Angles Used | Angles threshold or passing points required to make REP++ |
 | ------------- | ------------- |------------- |
-| Push-Up  | Shoulder Abduction <br/>  Shoulder Flexion  |             |
+| Push-Up  | Shoulder Abduction<br/>Shoulder Flexion<br/>Hips<br/>Knees<br/>Elbow  | **Short** <br/> Shoulder Abduction = 10 <br/> Shoulder Flexion = 50 <br/> Hip >= 165<br/>Knees >= 175 <br/> ELbow = 175           |
 | Content Cell  | Content Cell  |             |
