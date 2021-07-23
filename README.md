@@ -176,13 +176,16 @@ public void performSquatRight(){
      System.out.println("Put your " + placemark + "to an angle of 165");
 }
 ```
-          `//Note: This was for detection from Right Joints, Same for left is needed.`
+          `//Note: This was for performance from Right Joints, Same for left is needed.
+           //When performSquatRight()&&performSquatLeft==True --> repcounter++`
 
 ## For detecting the exercise that the user is going to perform.
 ```java
 public void detectSquatRight(){
  if(rightShoulderAbductionAngle==10 && rightShoulderFlexionAngle==50 && rightHipAngle>=165 && rightKneeAngle>=175 && rightElbowAngle==175){
-     System out.println("Okay! Squats!")
+     System out.println("Okay! Squats!");
      }
 ```
-          `//Note: This was for detection from Right Joints, Same for left is needed.`
+          `//Note: This was for detection from Right Joints, Same for left is needed.
+           //When detectSquatRight()&&detectSquatLeft==True --> Detection Confirmed`
+          
