@@ -5,8 +5,8 @@ and shoulder flexion where the points are same but the angle changes based on ax
 
 The angle is calculated by using:
 CASE 1: When taking x and y into consideration
-
-     static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
+```java
+static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
      double result =
         Math.toDegrees(
             atan2(lastPoint.getPosition().y - midPoint.getPosition().y,
@@ -19,8 +19,8 @@ CASE 1: When taking x and y into consideration
      }
       return result;
     }
-
-CASE 2: When taking y and z into consideration
+```
+CASE 2: When Y and Z are taken into consideration
 ```java
    static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
     double result =
