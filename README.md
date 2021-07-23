@@ -142,9 +142,10 @@ Note:
 1. Wherever "=" has been mentioned, it means that if the person passes that angle during exercise, we can increment the "rep counter".
 2. For all the exercises there has to be 2 methods, One for LEFT and one for RIGHT.
 3. CASE 1: DETECTION OF EXERCISE THAT THE PERSON IS GOING TO PERFORM: Take SHORT into consideration. 
-4. CASE 2: CALCULATING ANGLE TO INCREMENT REP COUNTER or INFORM PERSON TO ADD MORE ANGLE TO EXERCISE. Take LONG into consideration.
+4. CASE 2: CALCULATING ANGLE TO INCREMENT REP COUNTER or INFORM PERSON TO ADD MORE ANGLE TO EXERCISE: Take LONG into consideration.
 
 | Exercise  | Angles Used | Angles threshold or passing points required to make REP++ |
 | ------------- | ------------- |------------- |
-| Content Cell  | Content Cell  |             |
+| Push-Up  | Shoulder Abduction
+Shoulder Flexion  |             |
 | Content Cell  | Content Cell  |             |
