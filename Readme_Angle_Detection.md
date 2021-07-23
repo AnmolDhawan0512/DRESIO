@@ -1,10 +1,11 @@
 # DRESIO
-Calculating Joint Angles 
-For calculation of angle of a joint, we need 3 points, firstpoint, midpoint and lastpoint. Also, three axeses are needed, namely x,y,z for certain cases like shoulder abduction 
-and shoulder flexion where the points are same but the angle changes based on axes. 
+
+***Calculating Joint Angles***
+For calculation of angle of a joint, we need 3 points, firstpoint, midpoint and lastpoint. Also, three axeses are needed, namely x,y,z for certain cases like shoulder abduction and shoulder flexion where the points are same but the angle changes based on axes. 
 
 The **angle** is calculated by using:
-### CASE 1: When taking X and Y into consideration
+
+#### CASE 1: When taking X and Y into consideration
 ```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
      double result =
@@ -20,7 +21,8 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
       return result;
     }
 ```
-### CASE 2: When Y and Z are taken into consideration
+
+#### CASE 2: When Y and Z are taken into consideration
 ```java
    static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
     double result =
@@ -36,7 +38,8 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
     return result;
   }
 ```
-### CASE 3: When taking X and Z into consideration
+
+#### CASE 3: When taking X and Z into consideration
 ```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
   double result =
@@ -53,7 +56,7 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
 }
 ``` 
 
-### CASE 4: When taking X, Y, Z into consideration
+#### CASE 4: When taking X, Y, Z into consideration
 ```java
 static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandmark lastPoint) {
   double result =
@@ -71,11 +74,12 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
   return result;
 }
 ```
+
 Then we get the angles for all the 33 landmarks as in a human body which goes like this.
 Note: This is the angle for 6 joints namely: Elbow, Shoulder Flexion, Shoulder Abduction, Hip, Knees, Ankle
 The computing goes as follows:
 
-### ANGLE 1: Hips
+#### Angle 1: Hips
 ```java
 double rightHipAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_SHOULDER),
@@ -84,7 +88,7 @@ double rightHipAngle = getAngle(
  ```               
                 `//Similar for leftHipAngle`
                 
-### ANGLE 2: Elbow
+#### Angle 2: Elbow
 ```java
 double rightElbowAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_WRIST),   
@@ -93,7 +97,7 @@ double rightElbowAngle = getAngle(
 ```  
              `   //Similar for leftElbowAngle`
                 
-### Angle 3: Shoulder Flexions
+#### Angle 3: Shoulder Flexions
 ```java
 double rightShoulderFlexionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -103,7 +107,7 @@ double rightShoulderFlexionAngle = getAngle(
              `   //Similar for leftShoulderFlexionAngle
                 //Note, when using Shoulder Flexion it means that the X-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.`
                 
-### Angle 4: Shoulder Abduction
+#### Angle 4: Shoulder Abduction
 ```java
 double rightShoulderAbductionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -114,7 +118,7 @@ double rightShoulderAbductionAngle = getAngle(
                 //Note, when using Shoulder Abduction it means that the Z-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.
                 //Refer to the Angle Cases as mentioned above
 
-### Angle 5: Knees
+#### Angle 5: Knees
 ```java
 double rightKneeAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ANKLE),   
@@ -123,7 +127,7 @@ double rightKneeAngle = getAngle(
 ```            
                 //Similar for leftKneeAngle
                 
-### Angle 6: Ankle
+#### Angle 6: Ankle
 ```java
 double rightAnkleAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_FOOTINDEX),   
@@ -138,7 +142,7 @@ Now we know how to:
 
 We can therefore move to various exercises and their requirements.
 
-Note:
+***Note:***
 1. Wherever "=" has been mentioned, it means that if the person passes that angle during exercise, we can increment the "rep counter".
 2. For all the exercises there has to be 2 methods, One for LEFT and one for RIGHT.
 3. **Case 1: Detection of Exercise that the person is going to perform: Take SHORT into consideration. **
