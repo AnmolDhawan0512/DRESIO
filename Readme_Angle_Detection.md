@@ -76,7 +76,8 @@ static double getAngle(PoseLandmark firstPoint, PoseLandmark midPoint, PoseLandm
 ```
 
 Then we get the angles for all the 33 landmarks as in a human body which goes like this.
-Note: This is the angle for 6 joints namely: Elbow, Shoulder Flexion, Shoulder Abduction, Hip, Knees, Ankle
+***Note:*** 
+This is the angle for 6 joints namely: Elbow, Shoulder Flexion, Shoulder Abduction, Hip, Knees, Ankle
 The computing goes as follows:
 
 #### Angle 1: Hips
@@ -88,7 +89,7 @@ double rightHipAngle = getAngle(
  ```               
                 `//Similar for leftHipAngle`
                 
-#### Angle 2: Elbow
+#### Angle 2: Elbows
 ```java
 double rightElbowAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_WRIST),   
@@ -107,7 +108,7 @@ double rightShoulderFlexionAngle = getAngle(
              `   //Similar for leftShoulderFlexionAngle
                 //Note, when using Shoulder Flexion it means that the X-AXIS should always be Null or ZERO. Any value added to it will be Shoulder Abduction.`
                 
-#### Angle 4: Shoulder Abduction
+#### Angle 4: Shoulder Abductions
 ```java
 double rightShoulderAbductionAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_ELBOW),   
@@ -127,7 +128,7 @@ double rightKneeAngle = getAngle(
 ```            
                 //Similar for leftKneeAngle
                 
-#### Angle 6: Ankle
+#### Angle 6: Ankles
 ```java
 double rightAnkleAngle = getAngle(
                 pose.getPoseLandmark(PoseLandmark.Type.RIGHT_FOOTINDEX),   
@@ -137,15 +138,15 @@ double rightAnkleAngle = getAngle(
                 `//Similar for leftKneeAngle`
 
 Now we know how to:
-1. Calculate the angle (the axes into consideration over various exercises and/or movements)
-2. Get the angles for the joints that are needed for us to design 3-5 exercises for Energize App.
+1. ***Calculate the angle*** (the axes into consideration over various exercises and/or movements)
+2. Get the ***angles for the joints*** that are needed for us to design 3-5 exercises for Energize App.
 
 We can therefore move to various exercises and their requirements.
 
 ***Note:***
 1. Wherever "=" has been mentioned, it means that if the person passes that angle during exercise, we can increment the "rep counter".
 2. For all the exercises there has to be 2 methods, One for LEFT and one for RIGHT.
-3. **Case 1: Detection of Exercise that the person is going to perform: Take SHORT into consideration. **
+3. **Case 1: Detection of Exercise that the person is going to perform: Take SHORT into consideration.**
 4. **Case 2: Calculating angle to increment rep counter or inform person to add more angle to Exercise: Take LONG into consideration.**
 
 | EXERCISES  | ANGLES USED | SHORT | LONG |
